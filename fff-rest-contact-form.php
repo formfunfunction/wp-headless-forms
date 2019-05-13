@@ -6,7 +6,7 @@
  * Author: Jamie Morgan-Ward <jamie@formfunfunction.com>
  * Author URI: https://formfunfunction.com/
  * Text Domain: wp-headless-forms
- * Version: 0.0.1-dev
+ * Version: 0.0.2-dev
  *
  * @package WPHeadlessForms
  */

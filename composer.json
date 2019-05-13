@@ -2,7 +2,7 @@
     "name": "formfunfunction/fff-rest-contact-form",
     "description": "A WordPress plugin which allows creating contact forms which can be submitted via REST API.",
     "type": "wordpress-plugin",
-    "version": "0.0.1-dev",
+    "version": "0.0.2-dev",
     "authors": [
         {
             "name": "Jamie Morgan-Ward",
