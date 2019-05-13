@@ -1,5 +1,13 @@
-<?php if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+<?php
+/**
+ * Email footer template
+ *
+ * @since 0.0.1
+ * @package WPHeadlessForms
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 ?>
 															</div>

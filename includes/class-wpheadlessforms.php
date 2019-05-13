@@ -65,6 +65,7 @@ class WPHeadlessForms {
 	public function init() {
 		$this->includes();
 		$this->actions();
+		$this->fields();
 	}
 
 	/**
@@ -105,6 +106,16 @@ class WPHeadlessForms {
 		require_once WPHF_PLUGIN_DIR . '/includes/class-wphf-form.php';
 		require_once WPHF_PLUGIN_DIR . '/includes/class-wphf-submit.php';
 		require_once WPHF_PLUGIN_DIR . '/includes/class-wphf-rest-controller.php';
+		require_once WPHF_PLUGIN_DIR . '/includes/acf-fields.php';
+	}
+
+	/**
+	 * Initialize ACF field group.
+	 *
+	 * @since 0.0.2
+	 */
+	public function fields() {
+		wphf_create_fields();
 	}
 
 	/**

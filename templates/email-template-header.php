@@ -1,13 +1,20 @@
 <?php
+/**
+ * Email header template
+ *
+ * @since 0.0.1
+ * @package WPHeadlessForms
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
-		<title><?php echo get_bloginfo( 'name', 'display' ); ?></title>
+		<title><?php bloginfo( 'name' ); ?></title>
 	</head>
 	<body marginwidth="0" topmargin="0" marginheight="0" offset="0">
 		<div id="wrapper">

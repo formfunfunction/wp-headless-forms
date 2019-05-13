@@ -9,5 +9,19 @@
             "email": "jamie@formfunfunction.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require": {
+        "squizlabs/php_codesniffer": "^3.4",
+        "wp-coding-standards/wpcs": "^2.1"
+    },
+    "scripts": {
+        "post-install-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+        "post-update-cmd" : "./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+        "test": [
+            "phpcs --report=full --colors -p --standard=WordPress --ignore=*/vendor/*,*/node_modules/*,*/includes/lib* ./ --extensions=php"
+        ],
+        "phpcs-fix": [
+            "phpcbf --report=full --colors -p --standard=WordPress --ignore=*/vendor/*,*/node_modules/*,*/includes/lib/* ./ --extensions=php"
+        ]
+    }
 }
