@@ -14,23 +14,26 @@ You can either install this plugin manually, or with composer.
 *To do*
 
 ### Manually
-1. Clone this repository into the \`/wp-content/plugins/\` directory.
+1. Clone this repository into the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
 ## Usage
 This plugin creates two new post types `forms` and `form-entries`. To create a form, simply navigate to Forms, click `Add New` and add a few fields to get started.
 
 This will expose new endpoints in the WordPress REST API.
-`[GET] /forms/v1/forms/`
-`[GET] /forms/v1/forms/{form-id}`
-`[POST] /forms/v1/forms/{form-id}`
+
+`GET /forms/v1/forms/`
+
+`GET /forms/v1/forms/{form-id}`
+
+`POST /forms/v1/forms/{form-id}`
 
 ### Nonce tokens
 To submit a form, you'll need to pass a nonce supplied in the response of the GET request.
 
 ### Example request
 
-`[GET] https://example.com/wp-json/forms/v1/forms/{form-id}`
+`GET https://example.com/wp-json/forms/v1/forms/{form-id}`
 
 **Response**
 
@@ -64,7 +67,7 @@ To submit a form, you'll need to pass a nonce supplied in the response of the GE
 }
 ```
 
-`[POST] https://example.com/wp-json/forms/v1/forms/{form-id}`
+`POST https://example.com/wp-json/forms/v1/forms/{form-id}`
 
 **Request body**
 
@@ -96,7 +99,7 @@ To submit a form, you'll need to pass a nonce supplied in the response of the GE
 
 ## Todo:
 This is the current list of improvements we're intending to make.
-* Make the template content editible in the CMS.
+* Make the email template content editible in the CMS.
 * Create hooks for modifying validations and plugin functions.
 * Create functions for programatically registering forms and fields.
 * Add more field types in CMS.
