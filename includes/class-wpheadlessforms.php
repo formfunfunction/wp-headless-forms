@@ -194,6 +194,8 @@ class WPHeadlessForms {
 			$forms[] = new WPHF_Form( $post );
 		}
 
+		$forms = apply_filters( 'wphf_get_forms', $forms );
+
 		return $forms;
 	}
 }
