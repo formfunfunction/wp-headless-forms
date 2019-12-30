@@ -90,14 +90,9 @@ class WPHF_REST_Controller {
 	 * @param WP_REST_Request $request Current request.
 	 */
 	public function submit_form( $request ) {
-		$id   = (int) $request['id'];
-		$post = get_post( $id );
+		$id = (int) $request['id'];
 
 		$args = $request->get_params();
-
-		if ( empty( $post ) ) {
-			return rest_ensure_response( array() );
-		}
 
 		$wphf_instance = WPHeadlessForms::get_instance();
 
