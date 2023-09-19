@@ -126,10 +126,20 @@ class WPHeadlessForms {
 	public function actions() {
 		add_action( 'init', array( 'WPHF_Post_Types', 'init' ) );
 		add_action( 'rest_api_init', array( &$this, 'wphf_register_rest_routes' ) );
+		add_filter( 'wp_mail_content_type', array( &$this, 'set_content_type' ) );
 
 		if ( is_admin() ) {
 			add_action( 'add_meta_boxes', array( 'WPHF_Meta_Boxes', 'init' ) );
 		}
+	}
+
+	/**
+	 * Set emails to use HTML formatting
+	 *
+	 * @since 0.0.3
+	 */
+	public function set_content_type() {
+		return "text/html";
 	}
 
 	/**
