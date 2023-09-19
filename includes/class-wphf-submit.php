@@ -190,11 +190,12 @@ class WPHF_Submit {
 	protected function send_mail() {
 		$to_addresss = get_field( 'recipient', $this->form->id );
 
-		add_filter( 'wp_mail_content_type', 'set_html_content_type' );
+		$headers = array( 'Content-Type: text/html; charset=UTF-8' );
 		$notification = wp_mail(
 			$to_addresss,
 			'Contact from submission from ' . $this->clean_fields['name'],
-			wphf_notification_email_body( $this->clean_fields )
+			wphf_notification_email_body( $this->clean_fields ),
+			$headers
 		);
 
 		if ( ! $notification ) {
@@ -205,9 +206,9 @@ class WPHF_Submit {
 		$confirmation = wp_mail(
 			$this->clean_fields['email'],
 			'Thanks for your enquiry',
-			wphf_confirmation_email_body( $this->clean_fields )
+			wphf_confirmation_email_body( $this->clean_fields ),
+			$headers
 		);
-		remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
 
 		if ( ! $confirmation ) {
 			$this->prepare_error( 'mail' );
