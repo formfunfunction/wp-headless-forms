@@ -117,9 +117,9 @@ class WPHF_Submit {
 	 * @since 0.0.1
 	 */
 	public function is_valid() {
-		if ( count( $this->errors ) > 0 ) {
-			return false;
-		}
+		if ( !empty($this->errors) ) {
+		return false;
+	}
 		return true;
 	}
 
